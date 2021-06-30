@@ -56,23 +56,39 @@ export const constantRoutes = [
   },
 
   {
-    path: '/example',
+    path: '/user',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    redirect: '/user/list',
+    name: '用户管理',
+    meta: { title: '用户管理', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'list',
+        name: '用户列表',
+        component: () => import('@/views/user/list'),
+        meta: { title: '用户列表', icon: 'table' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'add',
+        name: '用户添加',
+        component: () => import('@/views/user/add'),
+        meta: { title: '用户添加', icon: 'tree' }
+      }
+    ]
+  },
+
+  {
+    path: '/link',
+    component: Layout,
+    redirect: '/link/list',
+    name: '链接管理',
+    meta: { title: '链接管理', icon: 'example' },
+    children: [
+      {
+        path: 'list',
+        name: '链接列表',
+        component: () => import('@/views/link/list'),
+        meta: { title: '链接列表', icon: 'table' }
       }
     ]
   },

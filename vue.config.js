@@ -34,7 +34,8 @@ module.exports = {
     open: true,
     overlay: {
       warnings: false,
-      errors: true
+      // errors: true
+      errors: false
     },
     before: require('./mock/mock-server.js')
   },
